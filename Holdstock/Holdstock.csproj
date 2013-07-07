@@ -86,6 +86,7 @@
     <Compile Include="Field\Block.cs" />
     <Compile Include="Field\BlockTextures.cs" />
     <Compile Include="Field\Box.cs" />
+    <Compile Include="Field\Snow.cs" />
     <Compile Include="Field\Cloud.cs" />
     <Compile Include="Field\Rock.cs" />
     <Compile Include="Field\Ghost.cs" />
@@ -119,7 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Audio\music5.ogg" />
+    <None Include="Audio\music5.ogg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Audio\music4.ogg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
