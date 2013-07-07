@@ -86,10 +86,87 @@ namespace Holdstock
             }
             return null;
         }
+        
+        public override List<Arrow> attackSpecial2(RenderTarget _window, Window window)
+    {
+        List<Arrow> arrowVolley = new List<Arrow>();
+            //if (activated && this.Mana > 0)
+            {
+                
+                this.Mana -= 5;
+                attack1Sound.Play();
+                float missileX = (float)sprite.Position.X + 82;
+                float missileY = (float)sprite.Position.Y + sprite.Texture.Size.Y / 2;
+
+                int mouseXinWindow = Mouse.GetPosition(window).X;
+                int mouseYinWindow = Mouse.GetPosition(window).Y;
+
+                float playerX = (float)sprite.Position.X;
+                float playerY = (float)sprite.Position.Y;
+
+                Vector2f clikInMap = _window.MapPixelToCoords(new Vector2i(mouseXinWindow, mouseYinWindow));
+                for (float i = -1; i <= 1; i = i + 1)
+                {
+                       for (float j = 1; j >= -1; j = j - 1)
+                    {
+                        float xVel = i;//(clikInMap.X - sprite.Position.X);
+                        float yVel = j;//(clikInMap.Y - sprite.Position.Y);
+
+                        double vectLength = Math.Sqrt((double)xVel * xVel + (double)yVel * yVel);
+                        xVel = (float)(xVel / vectLength);
+                        yVel = (float)(yVel / vectLength);
+
+                        double angle = 180 * Math.Atan2(yVel, xVel) / Math.PI;
+
+                        Console.WriteLine(angle);
+                        Arrow arrow = new Arrow(missileX, missileY, xVel, yVel, _window);
+                        arrow.sprite.Rotation = (float)angle;
+                        
+                        arrowVolley.Add(arrow);
+                    } 
+                }
+                
+                return (arrowVolley);
+            }
+            return null;
+    }
         public override Missile attackSpecial(RenderTarget _window, Window window)
         {
+            List<Arrow> arrowVolley = new List<Arrow>();
+            //if (activated && this.Mana > 0)
+            {
+                
+                this.Mana -= 5;
+                attack1Sound.Play();
+                float missileX = (float)sprite.Position.X + 82;
+                float missileY = (float)sprite.Position.Y + sprite.Texture.Size.Y / 2;
+
+                int mouseXinWindow = Mouse.GetPosition(window).X;
+                int mouseYinWindow = Mouse.GetPosition(window).Y;
+
+                float playerX = (float)sprite.Position.X;
+                float playerY = (float)sprite.Position.Y;
+
+                Vector2f clikInMap = _window.MapPixelToCoords(new Vector2i(mouseXinWindow, mouseYinWindow));
+
+                float xVel = -1 ;//(clikInMap.X - sprite.Position.X);
+                float yVel = 1;//(clikInMap.Y - sprite.Position.Y);
+
+                double vectLength = Math.Sqrt((double)xVel * xVel + (double)yVel * yVel);
+                xVel = (float)(xVel / vectLength);
+                yVel = (float)(yVel / vectLength);
+
+                double angle = 180 * Math.Atan2(yVel, xVel) / Math.PI;
+
+                Console.WriteLine(angle);
+                Arrow arrow = new Arrow(missileX, missileY, xVel, yVel, _window);
+                arrow.sprite.Rotation = (float)angle;
+                arrowVolley.Add(arrow);
+                return (arrow);
+            }
             return null;
         }
+
           public override void jump()
           {
               if (!this.isJumping)
