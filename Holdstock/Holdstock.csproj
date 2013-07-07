@@ -86,6 +86,7 @@
     <Compile Include="Field\Block.cs" />
     <Compile Include="Field\BlockTextures.cs" />
     <Compile Include="Field\Box.cs" />
+    <Compile Include="Field\Snow.cs" />
     <Compile Include="Field\Cloud.cs" />
     <Compile Include="Field\Rock.cs" />
     <Compile Include="Field\Ghost.cs" />
@@ -119,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Audio\music6.ogg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Audio\music5.ogg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Audio\music4.ogg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -248,6 +255,36 @@
     <Content Include="images\rock.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\snow100x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowBottomLeft.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowBottomMid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowBottomRight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowLeft.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowMiddle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowRight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowSolo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowTopLeft.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\snowTopRight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\spritesheet_wizard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -258,6 +295,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\wizard_spritesheet.gif" />
+    <Content Include="World\world3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="World\world2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -54,8 +54,12 @@ namespace Holdstock
 
         public abstract Missile attackSpecial(RenderTarget _window, Window window);
 
+        public virtual List<Arrow> attackSpecial2(RenderTarget _window, Window window)
+        {
+            return null;
+        }
 
-
+        
         public void moveRight(TimeSpan deltaTime)
         {
             if (leftCollision)

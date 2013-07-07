@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Audio;
 
 namespace Holdstock
 {
@@ -20,6 +21,7 @@ namespace Holdstock
 
         bool enlair = false;
 
+        private Music _mainMusic;
         public int activePlayer;
 
         public List<Character> _characters;
@@ -44,6 +46,8 @@ namespace Holdstock
 
         public GameScreen(RenderWindow window)
         {
+            /* Loading game music */
+
             _window = window;
             _window.SetVisible(true);
 
@@ -107,6 +111,18 @@ namespace Holdstock
 
         public override void Init()
         {
+
+            _mainMusic = new Music("audio/" + Level.musicPerLevel());
+
+            _mainMusic.Volume = 15;
+            _mainMusic.Loop = true;
+
+            MusicManagement.GameMusic = _mainMusic;
+
+            MusicManagement.stopPlaying();
+            MusicManagement.IsPlaying = true;
+            MusicManagement.startPlaying();
+
 
             _characters = new List<Character>();
            missiles = new List<Missile>();
@@ -348,11 +364,22 @@ namespace Holdstock
             }
             if (e.Button == Mouse.Button.Right)
             {
-                Missile missile = _characters[activePlayer].attackSpecial(_window, _window);
-                if (missile != null)
+                if (_characters[activePlayer].GetType().ToString() == "Holdstock.Archer")
                 {
-                    missiles.Add(missile);
-                   // missile.update(_worldBlock, _timerTracker.Elapsed);
+                    List<Arrow> arrowList = _characters[activePlayer].attackSpecial2(_window, _window);
+                    foreach (Arrow arrow in arrowList)
+                    {
+                        missiles.Add((Missile)arrow);
+                    }
+                }
+                else
+                {
+                    Missile missile = _characters[activePlayer].attackSpecial(_window, _window);
+                    if (missile != null)
+                    {
+                        missiles.Add(missile);
+                        // missile.update(_worldBlock, _timerTracker.Elapsed);
+                    }
                 }
             }
         }

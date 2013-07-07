@@ -9,7 +9,6 @@ namespace Holdstock
     static class Pieces
     {
         public static int nbRings { get; set; }
-        static bool singleton = false;
 
         public static void init_Rings()
         {
