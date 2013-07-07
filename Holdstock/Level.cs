@@ -14,7 +14,7 @@ namespace Holdstock
 
         public static void setLevels()
         {
-            ActualLevel = 1;
+            ActualLevel = 2;
             MaxLevel = 5;
 
             objectives = new List<string>();
