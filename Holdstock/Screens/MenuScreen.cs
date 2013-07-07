@@ -18,6 +18,8 @@ namespace Holdstock
 
         private Keyboard.Key _previousPressedKey;
 
+        private Sprite _logoImageSprite;
+
         private RenderWindow _window;
 
         public enum existingOptions : short
@@ -32,28 +34,31 @@ namespace Holdstock
             _menuOptions = new List<Text>();
             _menuFont = new Font("Ressources/arial2.ttf");
 
+            _logoImageSprite = new Sprite(BlockTextures.logoTexture);
+            _logoImageSprite.Position = new Vector2f(280, 100);
+
             /* Start new game button configuration */
 
-            Text startGameText = new Text("New Game", _menuFont, 16);
+            Text startGameText = new Text("New Game", _menuFont, 22);
 
             startGameText.Color = new Color(255, 255, 255);
-            startGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 - 30);
+            startGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 - 30 + 50);
 
             _menuOptions.Add(startGameText);
 
             /* Default option selection cursor */
 
-            _selectorText = new Text("->", _menuFont, 16);
+            _selectorText = new Text("->", _menuFont, 22);
 
             _selectorText.Color = new Color(255, 255, 255);
             _selectorText.Position = new Vector2f(startGameText.Position.X - 40, startGameText.Position.Y);
 
             /* Exit game button configuration */
 
-            Text exitGameText = new Text("Exit Game", _menuFont, 16);
+            Text exitGameText = new Text("Exit Game", _menuFont, 22);
 
             exitGameText.Color = new Color(255, 255, 255);
-            exitGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 + 30);
+            exitGameText.Position = new Vector2f(window.Size.X / 2 - 50 + 4, window.Size.Y / 2 + 30 + 120);
 
             _menuOptions.Add(exitGameText);
         }
@@ -124,6 +129,8 @@ namespace Holdstock
         public override void Draw()
         {
             _window.Clear();
+
+            _window.Draw(_logoImageSprite);
 
             foreach (Text option in _menuOptions)
             {

@@ -222,6 +222,9 @@
     <Content Include="images\guerrier_spritesheet_leftright.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\holdstock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\House.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
