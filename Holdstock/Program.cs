@@ -33,7 +33,7 @@ namespace Holdstock
         {
             /* Basic initialisations  */
 
-            _window = new RenderWindow(new VideoMode(1280 , 1024), "Hoodstock", Styles.Fullscreen);
+            _window = new RenderWindow(new VideoMode(1280 , 1024), "Hoodstock", Styles.Default);
 
             _window.SetVisible(true);
             
