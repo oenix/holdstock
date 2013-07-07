@@ -348,11 +348,22 @@ namespace Holdstock
             }
             if (e.Button == Mouse.Button.Right)
             {
-                Missile missile = _characters[activePlayer].attackSpecial(_window, _window);
-                if (missile != null)
+                if (_characters[activePlayer].GetType().ToString() == "Holdstock.Archer")
                 {
-                    missiles.Add(missile);
-                   // missile.update(_worldBlock, _timerTracker.Elapsed);
+                    List<Arrow> arrowList = _characters[activePlayer].attackSpecial2(_window, _window);
+                    foreach (Arrow arrow in arrowList)
+                    {
+                        missiles.Add((Missile)arrow);
+                    }
+                }
+                else
+                {
+                    Missile missile = _characters[activePlayer].attackSpecial(_window, _window);
+                    if (missile != null)
+                    {
+                        missiles.Add(missile);
+                        // missile.update(_worldBlock, _timerTracker.Elapsed);
+                    }
                 }
             }
         }
