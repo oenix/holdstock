@@ -12,6 +12,8 @@ namespace Holdstock
     class PauseScreen : Screen
     {
         private Font _menuFont;
+
+        private Text __menuTitleText;
         private Text _selectorText;
         private List<Text> _menuOptions;
 
@@ -34,9 +36,16 @@ namespace Holdstock
             _menuOptions = new List<Text>();
             _menuFont = new Font("Ressources/arial.ttf");
 
+            /* Menu indicator title */
+
+            __menuTitleText = new Text("PAUSE", _menuFont, 40);
+
+            __menuTitleText.Color = new Color(255, 255, 255);
+            __menuTitleText.Position = new Vector2f(640, 100);
+
             /* Start new game button configuration */
 
-            Text resumeGameText = new Text("Resume Game", _menuFont, 16);
+            Text resumeGameText = new Text("Resume Game", _menuFont, 22);
 
             resumeGameText.Color = new Color(255, 255, 255);
             resumeGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 - 60);
@@ -45,26 +54,26 @@ namespace Holdstock
 
             /* Default option selection cursor */
 
-            _selectorText = new Text("->", _menuFont, 16);
+            _selectorText = new Text("->", _menuFont, 22);
 
             _selectorText.Color = new Color(255, 255, 255);
             _selectorText.Position = new Vector2f(resumeGameText.Position.X - 40, resumeGameText.Position.Y);
 
             /* Start new game button configuration */
 
-            Text musicGameText = new Text("Music : ON", _menuFont, 16);
+            Text musicGameText = new Text("Music : ON", _menuFont, 22);
 
             musicGameText.Color = new Color(255, 255, 255);
-            musicGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 - 00);
+            musicGameText.Position = new Vector2f(window.Size.X / 2 - 50 + 17, window.Size.Y / 2 - 00);
 
             _menuOptions.Add(musicGameText);
 
             /* Exit game button configuration */
 
-            Text exitGameText = new Text("Leave Game", _menuFont, 16);
+            Text exitGameText = new Text("Leave Game", _menuFont, 22);
 
             exitGameText.Color = new Color(255, 255, 255);
-            exitGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 + 60);
+            exitGameText.Position = new Vector2f(window.Size.X / 2 - 50 + 12, window.Size.Y / 2 + 60);
 
             _menuOptions.Add(exitGameText);
         }
@@ -152,6 +161,8 @@ namespace Holdstock
         public override void Draw()
         {
             _window.Clear();
+
+            _window.Draw(__menuTitleText);
 
             foreach (Text option in _menuOptions)
             {

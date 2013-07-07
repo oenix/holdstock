@@ -38,7 +38,7 @@ namespace Holdstock
             walkingAnimationSprite.Scale = new Vector2f(3, 3);
             walkingAnimationSprite.Position = new Vector2f((float)x, (float)y);
 
-            walkingAnimationLeftSprite = new SpriteAnimated(magicienTextures, 58, 58, 15, window, RenderStates.Default, 1, 3, true, true);
+            walkingAnimationLeftSprite = new SpriteAnimated(magicienTextures, 58, 58, 15, window, RenderStates.Default, 5, 7, true, true);
             walkingAnimationLeftSprite.Scale = new Vector2f(3, 3);
             walkingAnimationLeftSprite.Position = new Vector2f((float)x, (float)y);
 
