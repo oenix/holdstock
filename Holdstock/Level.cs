@@ -23,5 +23,16 @@ namespace Holdstock
             objectives.Add("Trouver le trésor");
             objectives.Add("Un objectif très long pour que vous puissiez parcourir tout le niveau sans finir de le lire");
         }
+
+        public static string musicPerLevel()
+        {
+            if (ActualLevel == 1)
+                return "music4.ogg";
+            if (ActualLevel == 2)
+                return "music5.ogg";
+            if (ActualLevel == 3)
+                return "music6.ogg";
+            return "music1.ogg";
+        }
     }
 }

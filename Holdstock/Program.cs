@@ -8,7 +8,6 @@ using SFML;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.Audio;
-using SfmlFirstTry;
 
 namespace Holdstock
 {
@@ -24,7 +23,6 @@ namespace Holdstock
 
     class MySFMLProgram
     {
-        private Music _mainMusic;
         private RenderWindow _window;
     
         public int lines = CreateWorld.getLines();
@@ -41,17 +39,7 @@ namespace Holdstock
             
             _window.SetFramerateLimit(60);
            
-            /* Loading game music */
-            
-            _mainMusic = new Music("audio/music4.ogg");
 
-            _mainMusic.Volume = 15;
-            _mainMusic.Loop = true;
-
-            MusicManagement.GameMusic = _mainMusic;
-            MusicManagement.IsPlaying = true;
-
-            MusicManagement.startPlaying();
 
             /* Set Level */
 
