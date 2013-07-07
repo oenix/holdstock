@@ -165,6 +165,7 @@ namespace Holdstock
                         }
                     }
                 }
+
             }
 
             foreach (Block block in collisions)
@@ -200,6 +201,12 @@ namespace Holdstock
 
                             savePrincess = true;
                         }
+                    }
+                    if (block.name == "rock" && Keyboard.IsKeyPressed(Keyboard.Key.R) && this.GetType().ToString() == "Holdstock.Guerrier")
+                    {
+                        Rock r = (Rock)block;
+                        r.sprite.Position = new Vector2f(r.sprite.Position.X, r.sprite.Position.Y + 100);
+                        break;
                     }
                     if (block.GetType().ToString() == "Holdstock.Stuff")
                     {

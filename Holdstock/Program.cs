@@ -33,7 +33,9 @@ namespace Holdstock
         {
             /* Basic initialisations  */
 
+
             _window = new RenderWindow(new VideoMode(800 , 600), "Holdstock", Styles.Default);
+
 
             _window.SetVisible(true);
             
