@@ -119,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Audio\music4.ogg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Audio\music1.ogg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

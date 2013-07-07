@@ -34,7 +34,7 @@ namespace Holdstock
             /* Basic initialisations  */
 
 
-            _window = new RenderWindow(new VideoMode(800 , 600), "Holdstock", Styles.Default);
+            _window = new RenderWindow(new VideoMode(1280 , 1024), "Holdstock", Styles.Default);
 
 
             _window.SetVisible(true);
@@ -43,7 +43,7 @@ namespace Holdstock
            
             /* Loading game music */
             
-            _mainMusic = new Music("audio/music1.ogg");
+            _mainMusic = new Music("audio/music4.ogg");
 
             _mainMusic.Volume = 15;
             _mainMusic.Loop = true;
