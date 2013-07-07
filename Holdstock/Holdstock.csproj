@@ -292,6 +292,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\wizard_spritesheet.gif" />
+    <Content Include="World\world4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="World\world3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
