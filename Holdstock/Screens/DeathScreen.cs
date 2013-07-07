@@ -39,39 +39,39 @@ namespace Holdstock
 
             /* Death informations configuration */
 
-            _deathInfosText = new Text("You are dead... :/", _menuFont, 20);
+            _deathInfosText = new Text("You are dead... :/", _menuFont, 40);
 
             _deathInfosText.Color = new Color(255, 255, 255);
-            _deathInfosText.Position = new Vector2f(window.Size.X / 2 - 50, 150);
+            _deathInfosText.Position = new Vector2f(window.Size.X / 2 - 50 - 75, 150);
 
 
-            _deathScoreText = new Text("You reached " + Score.Points + " points.", _menuFont, 18);
+            _deathScoreText = new Text("You reached " + Score.Points + " points.", _menuFont, 30);
 
             _deathScoreText.Color = new Color(255, 255, 255);
-            _deathScoreText.Position = new Vector2f(window.Size.X / 2 - 50, 200);
+            _deathScoreText.Position = new Vector2f(window.Size.X / 2 - 50 - 75, 250);
 
             /* */
 
-            Text restartGameText = new Text("Restart Game", _menuFont, 16);
+            Text restartGameText = new Text("Restart Game", _menuFont, 22);
 
             restartGameText.Color = new Color(255, 255, 255);
-            restartGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 - 30);
+            restartGameText.Position = new Vector2f(window.Size.X / 2 - 50 + 15, window.Size.Y / 2 - 30 + 50);
 
             _menuOptions.Add(restartGameText);
 
             /* Default option selection cursor */
 
-            _selectorText = new Text("->", _menuFont, 16);
+            _selectorText = new Text("->", _menuFont, 22);
 
             _selectorText.Color = new Color(255, 255, 255);
             _selectorText.Position = new Vector2f(restartGameText.Position.X - 40, restartGameText.Position.Y);
 
             /* Exit game button configuration */
 
-            Text exitGameText = new Text("Go back to menu", _menuFont, 16);
+            Text exitGameText = new Text("Go back to menu", _menuFont, 22);
 
             exitGameText.Color = new Color(255, 255, 255);
-            exitGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 + 30);
+            exitGameText.Position = new Vector2f(window.Size.X / 2 - 50, window.Size.Y / 2 + 30 + 50);
 
             _menuOptions.Add(exitGameText);
         }

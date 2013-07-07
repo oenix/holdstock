@@ -21,6 +21,7 @@ namespace Holdstock
         public static Texture grassMiddle;
         public static Texture grassLeft;
         public static Texture grassRight;
+        public static Texture logoTexture;
 
 
         public static Texture snowSolo;
@@ -65,6 +66,8 @@ namespace Holdstock
             grassMiddle = new Texture("images/grassMiddle.png");
             grassLeft = new Texture("images/grassLeft.png");
             grassRight = new Texture("images/grassRight.png");
+            logoTexture = new Texture("images/holdstock.png");
+
 
             snowSolo = new Texture("images/snow100x100.png");
             snow = new Texture("images/snow100x100.png");
