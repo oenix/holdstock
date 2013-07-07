@@ -48,16 +48,6 @@ namespace Holdstock
         {
             /* Loading game music */
 
-            _mainMusic = new Music("audio/" + Level.musicPerLevel());
-
-            _mainMusic.Volume = 15;
-            _mainMusic.Loop = true;
-
-            MusicManagement.GameMusic = _mainMusic;
-            MusicManagement.IsPlaying = true;
-
-            MusicManagement.startPlaying();
-
             _window = window;
             _window.SetVisible(true);
 
@@ -121,6 +111,18 @@ namespace Holdstock
 
         public override void Init()
         {
+
+            _mainMusic = new Music("audio/" + Level.musicPerLevel());
+
+            _mainMusic.Volume = 15;
+            _mainMusic.Loop = true;
+
+            MusicManagement.GameMusic = _mainMusic;
+
+            MusicManagement.stopPlaying();
+            MusicManagement.IsPlaying = true;
+            MusicManagement.startPlaying();
+
 
             _characters = new List<Character>();
            missiles = new List<Missile>();
