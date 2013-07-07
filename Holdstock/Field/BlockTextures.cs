@@ -66,7 +66,7 @@ namespace Holdstock
             grassLeft = new Texture("images/grassLeft.png");
             grassRight = new Texture("images/grassRight.png");
 
-      /*      snowSolo = new Texture("images/snowSolo.png");
+            snowSolo = new Texture("images/snowSolo.png");
             snow = new Texture("images/snow100x100.png");
             snowTopLeft = new Texture("images/snowTopLeft.png");
             snowTopRight = new Texture("images/snowTopRight.png");
@@ -76,7 +76,7 @@ namespace Holdstock
             snowMiddle = new Texture("images/snowMiddle.png");
             snowLeft = new Texture("images/snowLeft.png");
             snowRight = new Texture("images/snowRight.png");
-            */
+            
             ground = new Texture("images/ground.png");
             ring = new Texture("images/coin_spritesheet.png");
             box = new Texture("images/box.png");

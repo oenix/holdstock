@@ -20,7 +20,7 @@ namespace Holdstock
             int j = 0;
             foreach (string line in lines)
             {
-                for(int i = 0; i < line.Length; i++)
+                for (int i = 0; i < line.Length; i++)
                 {
                     if (line[i] == '0')
                         world.Add(new Grass(new SFML.Window.Vector2f(i * 100, j * 100), "Solo", window));
@@ -32,34 +32,79 @@ namespace Holdstock
                         world.Add(new Box(new SFML.Window.Vector2f((i * 100), j * 100 + 1), window));
                     else if (line[i] == '4')
                         world.Add(new Spikes(new SFML.Window.Vector2f((i * 100), j * 100), window));
-                   else if (line[i] == '5')
-                        world.Add(new House(new SFML.Window.Vector2f((i * 100), j * 100-280), window));
+                    else if (line[i] == '5')
+                        world.Add(new House(new SFML.Window.Vector2f((i * 100), j * 100 - 280), window));
                     else if (line[i] == '6')
                         world.Add(new Interrupteur(new SFML.Window.Vector2f((i * 100), j * 100), window));
                     else if (line[i] == '7')
                         world.Add(new Princess(new SFML.Window.Vector2f((i * 100), j * 100 - 260), window));
-                //    else if (line[i] == '8')
-                 //       world.Add(new Ghost(new SFML.Window.Vector2f((i * 100), j * 100 - 115), window, random));
+                    //    else if (line[i] == '8')
+                    //       world.Add(new Ghost(new SFML.Window.Vector2f((i * 100), j * 100 - 115), window, random));
                     else if (line[i] == '9')
                         world.Add(new Cloud(new SFML.Window.Vector2f((i * 100), j * 100 - 115), window));
                     else if (line[i] == 'a')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "TopLeft" , window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "TopLeft", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "TopLeft", window));
+                    }
                     else if (line[i] == 'b')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Top", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Top", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "Top", window));
+                    }
                     else if (line[i] == 'c')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "TopRight", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "TopRight", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "TopRight", window));
+                    }
                     else if (line[i] == 'd')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Left", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Left", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "Left", window));
+                    }
                     else if (line[i] == 'e')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Middle", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Middle", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "Middle", window));
+                    }
                     else if (line[i] == 'f')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Right", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "Right", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "Right", window));
+                    }
                     else if (line[i] == 'g')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "BottomLeft", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "BottomLeft", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "BottomLeft", window));
+                    }
                     else if (line[i] == 'h')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "BottomMid", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "BottomMid", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "BottomMid", window));
+                    }
                     else if (line[i] == 'i')
-                        world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "BottomRight", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                            world.Add(new Grass(new SFML.Window.Vector2f((i * 100), j * 100), "BottomRight", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f((i * 100), j * 100), "BottomRight", window));
+                    }
                     else if (line[i] == '&')
                         world.Add(new Stuff(new SFML.Window.Vector2f((i * 100), j * 100), window, "fleche"));
                     else if (line[i] == 'é')

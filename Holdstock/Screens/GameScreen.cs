@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Audio;
 
 namespace Holdstock
 {
@@ -20,6 +21,7 @@ namespace Holdstock
 
         bool enlair = false;
 
+        private Music _mainMusic;
         public int activePlayer;
 
         public List<Character> _characters;
@@ -44,6 +46,18 @@ namespace Holdstock
 
         public GameScreen(RenderWindow window)
         {
+            /* Loading game music */
+
+            _mainMusic = new Music("audio/" + Level.musicPerLevel());
+
+            _mainMusic.Volume = 15;
+            _mainMusic.Loop = true;
+
+            MusicManagement.GameMusic = _mainMusic;
+            MusicManagement.IsPlaying = true;
+
+            MusicManagement.startPlaying();
+
             _window = window;
             _window.SetVisible(true);
 
