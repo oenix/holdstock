@@ -66,7 +66,7 @@ namespace Holdstock
             grassLeft = new Texture("images/grassLeft.png");
             grassRight = new Texture("images/grassRight.png");
 
-            snowSolo = new Texture("images/snowSolo.png");
+            snowSolo = new Texture("images/snow100x100.png");
             snow = new Texture("images/snow100x100.png");
             snowTopLeft = new Texture("images/snowTopLeft.png");
             snowTopRight = new Texture("images/snowTopRight.png");

@@ -38,6 +38,7 @@ namespace Holdstock
                 foreach (Block block in collisions)
                 {
                     bool isColliding = this.sprite.GetGlobalBounds().Intersects(block.sprite.GetGlobalBounds());
+                   // Console.WriteLine(isColliding);
                     if ((timerTracker == null  && isColliding && block.name == "ghost")
                         || (timerTracker != null && timerTracker.Elapsed.Milliseconds > 300 && isColliding && block.name == "ghost"))
                     {

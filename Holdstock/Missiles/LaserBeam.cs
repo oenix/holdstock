@@ -18,7 +18,7 @@ namespace Holdstock
             this.Y = y;
             this.xVel = xVel;
             this.yVel = yVel;
-            this.damages = 20;
+            this.damages = 200;
             xSpeed = 1;
             sprite = new SpriteAnimated(MissilesTexture.laserbeam, 960, 93, 32, window, RenderStates.Default, 0, 7, true, false);
             sprite.Scale = new Vector2f((float)3, (float)3);

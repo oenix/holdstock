@@ -117,8 +117,10 @@ namespace Holdstock
 
         public override Missile attackSpecial(RenderTarget _window, Window window)
         {
-            
-                
+
+            if (activated && this.Mana > 0 && !isSmaller)
+            {
+                Mana -= 50;
                 attack2Sound.Play();
                 float missileX = (float)sprite.Position.X + sprite.Texture.Size.X / 2;
                 float missileY = (float)sprite.Position.Y + sprite.Texture.Size.Y / 2;
@@ -145,6 +147,8 @@ namespace Holdstock
                 laser.sprite.Rotation = (float)angle;
 
                 return laser;
+            }
+            return null;
             
           
         }

@@ -23,7 +23,13 @@ namespace Holdstock
                 for (int i = 0; i < line.Length; i++)
                 {
                     if (line[i] == '0')
-                        world.Add(new Grass(new SFML.Window.Vector2f(i * 100, j * 100), "Solo", window));
+                    {
+                        if (Level.ActualLevel < 3)
+                          world.Add(new Grass(new SFML.Window.Vector2f(i * 100, j * 100), "Solo", window));
+                        else
+                            world.Add(new Snow(new SFML.Window.Vector2f(i * 100, j * 100), "Solo", window));
+
+                    }
                     else if (line[i] == '1')
                         world.Add(new Ground(new SFML.Window.Vector2f(i * 100, j * 100), window));
                     else if (line[i] == '2')
@@ -38,8 +44,8 @@ namespace Holdstock
                         world.Add(new Interrupteur(new SFML.Window.Vector2f((i * 100), j * 100), window));
                     else if (line[i] == '7')
                         world.Add(new Princess(new SFML.Window.Vector2f((i * 100), j * 100 - 260), window));
-                    //    else if (line[i] == '8')
-                    //       world.Add(new Ghost(new SFML.Window.Vector2f((i * 100), j * 100 - 115), window, random));
+                    else if (line[i] == '8')
+                        world.Add(new Ghost(new SFML.Window.Vector2f((i * 100), j * 100 - 115), window, random));
                     else if (line[i] == '9')
                         world.Add(new Cloud(new SFML.Window.Vector2f((i * 100), j * 100 - 115), window));
                     else if (line[i] == 'a')

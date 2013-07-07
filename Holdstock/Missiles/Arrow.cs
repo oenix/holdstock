@@ -22,7 +22,7 @@ namespace Holdstock
             sprite = new SpriteAnimated(MissilesTexture.arrow, 240, 63, 1, window, RenderStates.Default, 0, 0, false, false);
             sprite.Scale = new Vector2f((float)0.5, (float)0.5);
             sprite.Position = new Vector2f((float)x, (float)y);
-            timerTracker = new System.Diagnostics.Stopwatch();
+          //  timerTracker = new System.Diagnostics.Stopwatch();
         }
     }
 }
